@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Getter
 @Setter
-@Component("yaml")
+@Component
 @ConfigurationProperties("trainer") // read from application.yml
 public class TrainerProperties {
 
