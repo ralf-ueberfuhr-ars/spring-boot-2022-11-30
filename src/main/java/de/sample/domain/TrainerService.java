@@ -1,8 +1,6 @@
 package de.sample.domain;
 
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -13,9 +11,16 @@ public class TrainerService {
     @Setter
     private Trainer trainer;
 
-    // Initialdaten konfigurierbar??
+    /*
+     * Configure trainer: Convention over Configuration
+     * ----------------------------------------------------
+     * Emilia Mayer (see TrainerPropertiesConfiguration and TrainerProperties default values)
+     *  -> overwritten by application.yml (mapped to TrainerProperties)
+     *  -> overwritten by custom Trainer bean (see TrainerConfiguration)
+     */
 
-    public TrainerService(/*@Qualifier("Tom")*/ Trainer trainer) { // Trainer-Objekt im Kontext
+    // Trainer instance must be available in context
+    public TrainerService(Trainer trainer) {
         this.trainer = trainer;
     }
 

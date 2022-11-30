@@ -1,3 +1,4 @@
 trainer:
-  firstName: Max
-  lastName: Smith
+  first-name: Max
+  last-name: Smith
+# we can use ${VARIABLE:defaultValue} to refer to environment variables
